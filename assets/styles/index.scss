@@ -12,9 +12,7 @@ h1 {
   margin-top: 0;
 }
 
-#welcome-message,
-#start,
-#end {
+.gutterless {
   padding-left: 0;
   padding-right: 0;
   text-align: center;
@@ -23,6 +21,7 @@ h1 {
 .beers-container {
   height: 200px;
   border: 1px solid black;
+  overflow: scroll;
 }
 
 #tap-header {
@@ -33,4 +32,9 @@ h1 {
 #end {
   position: fixed;
   bottom: 0;
+}
+
+.beer-headers {
+  margin: 10px 0;
+  border-bottom: 1px solid black;
 }

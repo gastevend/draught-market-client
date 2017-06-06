@@ -1,0 +1,27 @@
+<div class='row beer-headers'>
+  <div class='col-xs-4 gutterless'>
+    name
+  </div>
+  <div class='col-xs-4 gutterless'>
+    price
+  </div>
+  <div class='col-xs-4 gutterless'>
+    actions
+  </div>
+</div>
+<div class='row list-o-beers'>
+  {{#each beers as |beer|}}
+    <div class='one-beer'>
+      <div class='col-xs-4 gutterless'>
+        {{beer.name}}
+      </div>
+      <div class='col-xs-4 gutterless'>
+        {{beer.price}}
+      </div>
+      <div class='col-xs-4 gutterless'>
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    </div>
+  {{/each}}
+</div>
