@@ -3,15 +3,23 @@
 const api = require('./api')
 const ui = require('./ui')
 
+const onDeleteBeer = function (event) {
+  const id = $(event.target).attr('data-id')
+  api.deleteBeer(id)
+    .then(ui.deleteBeerSuccess)
+    .catch(ui.deleteBeerFailure)
+}
+
+const addHandlers = function () {
+  $('.delete-button').on('click', onDeleteBeer)
+}
+
 const onGetBeers = function () {
   $('.beers-container').empty()
   api.getBeers()
     .then(ui.getBeersSuccess)
+    .then(addHandlers)
     .catch(ui.getBeersFailure)
-}
-
-const addHandlers = () => {
-  $()
 }
 
 module.exports = {

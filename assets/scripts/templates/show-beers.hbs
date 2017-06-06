@@ -11,7 +11,7 @@
 </div>
 <div class='row list-o-beers'>
   {{#each beers as |beer|}}
-    <div class='one-beer'>
+    <div data-id='{{beer.id}}' class='one-beer'>
       <div class='col-xs-4 gutterless'>
         {{beer.name}}
       </div>
@@ -19,8 +19,8 @@
         {{beer.price}}
       </div>
       <div class='col-xs-4 gutterless'>
-        <button>Edit</button>
-        <button>Delete</button>
+        <button data-id='{{beer.id}}' class='edit-button'>Edit</button>
+        <button data-id='{{beer.id}}' class='delete-button'>Delete</button>
       </div>
     </div>
   {{/each}}
