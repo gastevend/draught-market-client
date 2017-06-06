@@ -1,5 +1,3 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
-
 # Draught Exchange
 
 A fun game played at the bar that takes the beers that are on tap and puts them into a stock exchange, where high-demand beers increase in price and low-demand beers decrease in price. Its economics, don't make POUR decisions
@@ -13,9 +11,9 @@ Install with `npm install`.
 
 ## Screenshots
 ## Links
-[API]
+[API Repo](https://github.com/gastevend/draught-market-api)
 
-[Web App]
+[Web App](https://gastevend.github.io/draught-market-client)
 ## Technologies
 
 
@@ -27,8 +25,6 @@ Install with `npm install`.
 
 ## Wireframes
   [Draught Exchange Wireframes](./assets/styles/images/wireframes/)
-
-## Pitch deck
 
 ## Major Hurdles
 
