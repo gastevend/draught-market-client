@@ -20,8 +20,11 @@ const signUpFailure = (error) => {
 const signInSuccess = data => {
   store.user = data.user
   console.log('sign in working', data)
-  // $('#sign-out').show()
+  $('#change-password-link').show()
+  $('#drpdwn-button').show()
+  $('#sign-out').show()
   $('#sign-in').hide()
+  $('#manage-market-page').show()
   // $('#susuccess').hide()
   // $('#suerror').hide()
   // $('.sound-board').hide()
@@ -45,8 +48,10 @@ const signInFailure = error => {
 const signOutSuccess = data => {
   store.user = null
   console.log('sign out working', data)
-  // $('#sign-out').hide()
+  $('#sign-out').hide()
   $('#sign-up').show()
+  $('#change-password-link').hide()
+  $('#drpdwn-button').hide()
   // $('.footer').hide()
   // $('.sound-board').show()
   // $('#cpdropdown').hide()
@@ -65,6 +70,7 @@ const signOutFailure = error => {
 
 const changePasswordSuccess = data => {
   console.log('change password working', data)
+  $('#change-password').hide()
   // $('#cpsuccess').show()
   // $('#cperror').hide()
 }

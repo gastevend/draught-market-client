@@ -2,6 +2,41 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 fieldset,
-input {
+input,
+h1 {
   text-align: center;
+}
+
+h2,
+h1 {
+  margin-top: 0;
+}
+
+#welcome-message {
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
+.beers-container {
+  height: 200px;
+  border: 1px solid black;
+}
+
+#tap-header {
+  margin-top: 20px;
+}
+
+#start,
+#end {
+  width: 50%;
+  text-align: center;
+}
+
+#end {
+  float: right;
+}
+
+#start {
+  float: left;
 }

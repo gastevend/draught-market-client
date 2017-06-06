@@ -41,6 +41,13 @@ const onChangePassword = function () {
 const onOrSignIn = function () {
   $('#sign-up').hide()
   $('#sign-in').show()
+  $('#sign-up').trigger('reset')
+}
+
+const onOrSignUp = function () {
+  $('#sign-up').show()
+  $('#sign-in').hide()
+  $('#sign-in').trigger('reset')
 }
 
 const onChangePasswordLink = function () {
@@ -57,6 +64,7 @@ const addHandlers = () => {
   $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-in-link').on('click', onOrSignIn)
+  $('#sign-up-link').on('click', onOrSignUp)
   $('#change-password-link').on('click', onChangePasswordLink)
   $('.drop-links').on('click', closeDropdown)
 }
