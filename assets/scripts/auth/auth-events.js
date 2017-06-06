@@ -43,12 +43,22 @@ const onOrSignIn = function () {
   $('#sign-in').show()
 }
 
+const onChangePasswordLink = function () {
+  $('#change-password').show()
+}
+
+const closeDropdown = function () {
+  $('#bs-example-navbar-collapse-1').collapse('toggle')
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  $('#sign-out').on('submit', onSignOut)
+  $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-in-link').on('click', onOrSignIn)
+  $('#change-password-link').on('click', onChangePasswordLink)
+  $('.drop-links').on('click', closeDropdown)
 }
 
 module.exports = {

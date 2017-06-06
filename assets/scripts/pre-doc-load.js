@@ -2,7 +2,7 @@
 
 const preDocLoadActions = function () {
   $('#sign-in').hide()
-  $('#sign-out').hide()
+  // $('#sign-out').hide()
   $('#change-password').hide()
 }
 

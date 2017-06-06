@@ -46,7 +46,7 @@ const signOutSuccess = data => {
   store.user = null
   console.log('sign out working', data)
   // $('#sign-out').hide()
-  // $('#sign-in').show()
+  $('#sign-up').show()
   // $('.footer').hide()
   // $('.sound-board').show()
   // $('#cpdropdown').hide()
