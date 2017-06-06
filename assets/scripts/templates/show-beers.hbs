@@ -12,16 +12,17 @@
 <div class='container-fluid list-o-beers'>
   {{#each beers as |beer|}}
     <div data-id='{{beer.id}}' class='row one-beer'>
-      <div data-id='{{beer.id}}' id='beer-name' class='col-xs-4 gutterless beer-editable'>
+      <div data-id='{{beer.id}}' class='col-xs-4 gutterless beer-editable beer-name'>
         {{beer.name}}
       </div>
-      <div data-id='{{beer.id}}' id='beer-price' class='col-xs-4 gutterless beer-editable'>
+      <div data-id='{{beer.id}}' class='col-xs-4 gutterless beer-editable beer-price'>
         {{beer.price}}
       </div>
       <div class='col-xs-4 gutterless'>
         <button data-id='{{beer.id}}' class='edit-button manage-pg-buttons'>Edit</button>
         <button data-id='{{beer.id}}' class='delete-button manage-pg-buttons'>Delete</button>
         <button data-id='{{beer.id}}' class='save-button manage-pg-buttons'>Save</button>
+        <button data-id='{{beer.id}}' class='cancel-button manage-pg-buttons'>Cancel</button>
       </div>
     </div>
   {{/each}}

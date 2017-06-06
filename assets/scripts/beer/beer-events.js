@@ -16,8 +16,9 @@ const onDeleteBeer = function (event) {
 const onEditBeer = function () {
   const id = $(event.target).attr('data-id')
   $('.beer-editable[data-id=' + id + ']').attr('contenteditable', 'true')
-  console.log($('#beer-name').html(''))
-  $('#beer-name').focus()
+  $('.beer-name[data-id=' + id + ']').html('')
+  $('.beer-price[data-id=' + id + ']').html('0.00')
+  $('.beer-name[data-id=' + id + ']').focus()
   $('.manage-pg-buttons[data-id=' + id + ']').toggle()
   // $('.beer-editable[data-id=' + id + ']').replaceWith()
 }
@@ -27,11 +28,13 @@ const onSaveBeer = function () {
   const data = {
     beer: {}
   }
-  data.beer.name = $('#beer-name[data-id=' + id + ']').html()
-  data.beer.price = $('#beer-price[data-id=' + id + ']').html()
+  data.beer.name = $('.beer-name[data-id=' + id + ']').html()
+  data.beer.price = $('.beer-price[data-id=' + id + ']').html()
   api.editBeer(data, id)
     .then(ui.saveBeerSuccess)
     .catch(ui.saveBeerFailure)
+  $('.beer-editable[data-id=' + id + ']').attr('contenteditable', 'false')
+  $('.manage-pg-buttons[data-id=' + id + ']').toggle()
 }
 
 const addBeerListHandlers = function () {
