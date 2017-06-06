@@ -3,6 +3,7 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api.js')
 const ui = require('./ui.js')
+const beerEvents = require('../beer/beer-events')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -18,6 +19,7 @@ const onSignIn = function (event) {
   const data = getFormFields(this)
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(beerEvents.onGetBeers)
     .catch(ui.signInFailure)
   $('#sign-in').trigger('reset')
 }
