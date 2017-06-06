@@ -9,9 +9,9 @@
     actions
   </div>
 </div>
-<div class='row list-o-beers'>
+<div class='container-fluid list-o-beers'>
   {{#each beers as |beer|}}
-    <div data-id='{{beer.id}}' class='one-beer'>
+    <div data-id='{{beer.id}}' class='row one-beer'>
       <div class='col-xs-4 gutterless'>
         {{beer.name}}
       </div>

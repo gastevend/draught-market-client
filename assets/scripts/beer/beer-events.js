@@ -7,6 +7,9 @@ const onDeleteBeer = function (event) {
   const id = $(event.target).attr('data-id')
   api.deleteBeer(id)
     .then(ui.deleteBeerSuccess)
+    .then(() => {
+      $('.one-beer[data-id=' + id + ']').remove()
+    })
     .catch(ui.deleteBeerFailure)
 }
 
