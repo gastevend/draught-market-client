@@ -24,13 +24,14 @@ const onEditBeer = function () {
 
 const onSaveBeer = function () {
   const id = $(event.target).attr('data-id')
-  const beer = {}
-  beer.name = $('#beer-name[data-id=' + id + ']').html()
-  beer.price = $('#beer-price[data-id=' + id + ']').html()
-  console.log(beer)
-  // api.saveBeer(id)
-  //   .then(ui.saveBeerSuccess)
-  //   .catch(ui.saveBeerFailure)
+  const data = {
+    beer: {}
+  }
+  data.beer.name = $('#beer-name[data-id=' + id + ']').html()
+  data.beer.price = $('#beer-price[data-id=' + id + ']').html()
+  api.editBeer(data, id)
+    .then(ui.saveBeerSuccess)
+    .catch(ui.saveBeerFailure)
 }
 
 const addBeerListHandlers = function () {

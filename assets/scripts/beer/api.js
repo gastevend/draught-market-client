@@ -23,7 +23,19 @@ const getBeers = () => {
   })
 }
 
+const editBeer = (data, id) => {
+  return $.ajax({
+    url: config.apiOrigin + '/beers/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   getBeers,
-  deleteBeer
+  deleteBeer,
+  editBeer
 }
