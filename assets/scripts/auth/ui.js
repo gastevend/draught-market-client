@@ -52,7 +52,7 @@ const signOutSuccess = data => {
   $('#sign-up').show()
   $('#change-password-link').hide()
   $('#drpdwn-button').hide()
-  // $('.footer').hide()
+  $('#manage-market-page').hide()
   // $('.sound-board').show()
   // $('#cpdropdown').hide()
   // $('#sulink').show()
@@ -71,13 +71,14 @@ const signOutFailure = error => {
 const changePasswordSuccess = data => {
   console.log('change password working', data)
   $('#change-password').hide()
-  // $('#cpsuccess').show()
-  // $('#cperror').hide()
+  $('#cpsuccess').show()
+  $('#manage-market-page').show()
+  $('#cperror').hide()
 }
 
 const changePasswordFailure = error => {
   console.error('changePasswordFailure ran. error is ', error)
-  // $('#cperror').show()
+  $('#cperror').show()
 }
 
 module.exports = {

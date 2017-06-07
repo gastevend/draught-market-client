@@ -1,0 +1,26 @@
+<div class='row beer-headers'>
+  <div class='col-xs-4 gutterless'>
+    name
+  </div>
+  <div class='col-xs-4 gutterless'>
+    price
+  </div>
+  <div class='col-xs-4 gutterless'>
+    actions
+  </div>
+</div>
+<div class='container-fluid list-o-beers'>
+  {{#each beers as |beer|}}
+    <div data-id='{{beer.id}}' class='row one-beer'>
+      <div data-id='{{beer.id}}' class='col-xs-4 gutterless beer-editable beer-name'>
+        {{beer.name}}
+      </div>
+      <div data-id='{{beer.id}}' class='col-xs-4 gutterless beer-editable beer-price'>
+        {{beer.price}}
+      </div>
+      <div class='col-xs-4 gutterless'>
+        <button data-id='{{beer.id}}' class='purchased-button'>Purchased</button>
+      </div>
+    </div>
+  {{/each}}
+</div>

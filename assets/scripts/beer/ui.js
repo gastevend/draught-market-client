@@ -1,13 +1,16 @@
 'use strict'
 
 const showBeers = require('../templates/show-beers.hbs')
+const showMarket = require('../templates/show-market.hbs')
 
 const getBeersSuccess = data => {
   console.log('getting beers back and they are ', data)
   const showBeersHtml = showBeers({ beers: data.beers })
-  $('.beers-container').append(showBeersHtml)
+  $('#manage-container').append(showBeersHtml)
   $('.save-button').hide()
   $('.cancel-button').hide()
+  const showMarketHtml = showMarket({ beers: data.beers })
+  $('#market-container').append(showMarketHtml)
 }
 
 const getBeersFailure = error => {
@@ -16,8 +19,6 @@ const getBeersFailure = error => {
 
 const deleteBeerSuccess = data => {
   console.log('deleted that beer for ya ', data)
-  // const showBeersHtml = showBeers({ beers: data.beers })
-  // $('.beers-container').append(showBeersHtml)
 }
 
 const deleteBeerFailure = error => {

@@ -39,6 +39,7 @@
     <!-- /.container-fluid -->
   </nav>
 
+  <!-- Alert messages -->
   <div class="alert alert-success" id='susuccess' role="alert">
     <strong>Booya! Sign up successful.</strong> Go ahead and sign in to start choosing songs.
   </div>
@@ -56,6 +57,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <strong>What the....</strong> Change password failed. Try again.
   </div>
+  <!-- End alert messages -->
 
   <form id="sign-up" class='col-xs-8 col-xs-offset-2 forms'>
     <fieldset>
@@ -87,6 +89,8 @@
     </fieldset>
   </form>
 
+  <!-- Start of the market mange page -->
+
   <div class='container-fluid' id='manage-market-page'>
     <div class='row' id='welcome-container'>
       <div class='col-xs-10 col-xs-offset-1 gutterless' id='welcome-message'>
@@ -96,7 +100,7 @@
     </div>
     <div class='row' id='whats-on-tap'>
       <div class='col-xs-10 col-xs-offset-1'>
-        <h1 id='tap-header'>What's on Tap?</h1>
+        <h2 id='tap-header'>What's on Tap?</h2>
         <form id='add-beer'>
           <fieldset>
             <input type="text" name='beer[name]' id='beer-name' placeholder="Beer name">
@@ -108,19 +112,34 @@
     </div>
     <div class='row' id='beer-list'>
       <h1>Beer List</h1>
-      <div class='container-fluid beers-container'>
+      <div class='container-fluid beers-container' id='manage-container'>
 
       </div>
     </div>
-    <div class='row' id='mrkt-action-buttons'>
+    <div class='row mrkt-action-buttons'>
       <div class='col-xs-3 col-xs-offset-4 gutterless' id='start'>
         <p>Open the Market</p>
       </div>
-      <div class='col-xs-4 col-xs-offset-4 gutterless' id='end'>
+    </div>
+  </div>
+  <!-- End of the market mange page -->
+
+
+  <!-- Start of the open draught market page -->
+  <div class='container-fluid' id='draught-market-page'>
+    <div class='row'>
+      <h1>Draught Market</h1>
+      <div class='container-fluid beers-container' id='market-container'>
+
+      </div>
+    </div>
+    <div class='row mrkt-action-buttons'>
+      <div class='col-xs-3 col-xs-offset-4 gutterless' id='end'>
         <p>Close the Market</p>
       </div>
     </div>
   </div>
+  <!-- End of the open draught market page -->
 
 </body>
 

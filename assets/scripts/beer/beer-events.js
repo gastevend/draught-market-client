@@ -90,8 +90,20 @@ const onAddBeer = function () {
   }
 }
 
+const onOpenMarket = function () {
+  $('#manage-market-page').hide()
+  $('#draught-market-page').show()
+}
+
+const onCloseMarket = function () {
+  $('#manage-market-page').show()
+  $('#draught-market-page').hide()
+}
+
 const addHandlers = function () {
   $('#add-beer').on('submit', onAddBeer)
+  $('#start').on('click', onOpenMarket)
+  $('#end').on('click', onCloseMarket)
 }
 
 module.exports = {

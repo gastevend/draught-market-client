@@ -7,12 +7,12 @@ const preDocLoadActions = function () {
   $('#change-password-link').hide()
   $('#drpdwn-button').hide()
   $('#manage-market-page').hide()
-  $('#end').hide()
   $('#susuccess').hide()
   $('#suerror').hide()
   $('#sierror').hide()
   $('#cpsuccess').hide()
   $('#cperror').hide()
+  $('#draught-market-page').hide()
 }
 
 module.exports = {
