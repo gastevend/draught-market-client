@@ -12,14 +12,14 @@
 <div class='container-fluid list-o-beers'>
   {{#each beers as |beer|}}
     <div data-id='{{beer.id}}' class='row one-beer'>
-      <div data-id='{{beer.id}}' class='col-xs-4 gutterless beer-editable beer-name'>
+      <div data-id='{{@index}}' class='col-xs-4 gutterless market-beer-name'>
         {{beer.name}}
       </div>
-      <div data-id='{{beer.id}}' class='col-xs-4 gutterless beer-editable beer-price'>
+      <div data-id='{{@index}}' class='col-xs-4 gutterless market-beer-price'>
         {{beer.price}}
       </div>
       <div class='col-xs-4 gutterless'>
-        <button data-id='{{beer.id}}' class='purchased-button'>Purchased</button>
+        <button data-id='{{@index}}' class='purchased-button'>Purchased</button>
       </div>
     </div>
   {{/each}}

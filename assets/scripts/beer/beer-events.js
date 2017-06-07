@@ -9,9 +9,7 @@ const onDeleteBeer = function (event) {
   const id = $(event.target).attr('data-id')
   api.deleteBeer(id)
     .then(ui.deleteBeerSuccess)
-    .then(() => {
-      $('.one-beer[data-id=' + id + ']').remove()
-    })
+    .then(onGetBeers)
     .catch(ui.deleteBeerFailure)
 }
 
@@ -48,10 +46,16 @@ const onSaveBeer = function () {
   } else {
     api.editBeer(data, id)
       .then(ui.saveBeerSuccess)
+      .then(onGetBeers)
       .catch(ui.saveBeerFailure)
     $('.beer-editable[data-id=' + id + ']').attr('contenteditable', 'false')
     $('.manage-pg-buttons[data-id=' + id + ']').toggle()
   }
+}
+
+const onPurchaseBeer = function () {
+  const index = $(event.target).attr('data-id')
+  priceLogic.market.purchaseBeer(index)
 }
 
 const addBeerListHandlers = function () {
@@ -59,6 +63,7 @@ const addBeerListHandlers = function () {
   $('.edit-button').on('click', onEditBeer)
   $('.save-button').on('click', onSaveBeer)
   $('.cancel-button').on('click', onCancelBeer)
+  $('.purchased-button').on('click', onPurchaseBeer)
 }
 
 const onGetBeers = function () {
