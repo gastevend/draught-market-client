@@ -13,14 +13,18 @@ const onDeleteBeer = function (event) {
     .catch(ui.deleteBeerFailure)
 }
 
+const onCancelBeer = function () {
+  onGetBeers()
+}
+
 const onEditBeer = function () {
   const id = $(event.target).attr('data-id')
+
   $('.beer-editable[data-id=' + id + ']').attr('contenteditable', 'true')
   $('.beer-name[data-id=' + id + ']').html('')
   $('.beer-price[data-id=' + id + ']').html('0.00')
   $('.beer-name[data-id=' + id + ']').focus()
   $('.manage-pg-buttons[data-id=' + id + ']').toggle()
-  // $('.beer-editable[data-id=' + id + ']').replaceWith()
 }
 
 const onSaveBeer = function () {
@@ -41,6 +45,7 @@ const addBeerListHandlers = function () {
   $('.delete-button').on('click', onDeleteBeer)
   $('.edit-button').on('click', onEditBeer)
   $('.save-button').on('click', onSaveBeer)
+  $('.cancel-button').on('click', onCancelBeer)
 }
 
 const onGetBeers = function () {
