@@ -3,6 +3,7 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
+const priceLogic = require('./price-logic.js')
 
 const onDeleteBeer = function (event) {
   const id = $(event.target).attr('data-id')
@@ -93,11 +94,13 @@ const onAddBeer = function () {
 const onOpenMarket = function () {
   $('#manage-market-page').hide()
   $('#draught-market-page').show()
+  priceLogic.market.runGameLogic()
 }
 
 const onCloseMarket = function () {
   $('#manage-market-page').show()
   $('#draught-market-page').hide()
+  priceLogic.market.stopGameLogic()
 }
 
 const addHandlers = function () {

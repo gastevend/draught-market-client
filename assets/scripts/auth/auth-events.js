@@ -56,6 +56,7 @@ const onOrSignUp = function () {
 const onChangePasswordLink = function () {
   $('#change-password').show()
   $('#manage-market-page').hide()
+  $('#draught-market-page').hide()
 }
 
 const closeDropdown = function () {

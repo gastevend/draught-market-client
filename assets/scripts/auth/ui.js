@@ -53,6 +53,7 @@ const signOutSuccess = data => {
   $('#change-password-link').hide()
   $('#drpdwn-button').hide()
   $('#manage-market-page').hide()
+  $('#draught-market-page').hide()
   // $('.sound-board').show()
   // $('#cpdropdown').hide()
   // $('#sulink').show()

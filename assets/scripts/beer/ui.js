@@ -2,6 +2,7 @@
 
 const showBeers = require('../templates/show-beers.hbs')
 const showMarket = require('../templates/show-market.hbs')
+const priceLogic = require('./price-logic.js')
 
 const getBeersSuccess = data => {
   console.log('getting beers back and they are ', data)
@@ -11,6 +12,7 @@ const getBeersSuccess = data => {
   $('.cancel-button').hide()
   const showMarketHtml = showMarket({ beers: data.beers })
   $('#market-container').append(showMarketHtml)
+  priceLogic.market.updateMarketData(data)
 }
 
 const getBeersFailure = error => {
