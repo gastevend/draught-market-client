@@ -1,5 +1,6 @@
 'use strict'
 
+const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 
@@ -56,7 +57,23 @@ const onGetBeers = function () {
     .catch(ui.getBeersFailure)
 }
 
+const onAddBeer = function () {
+  const data = getFormFields(this)
+  event.preventDefault()
+  console.log(data)
+  api.addBeer(data)
+    .then(ui.addBeerSuccess)
+    .then(onGetBeers)
+    .catch(ui.addBeerFailure)
+  $('#add-beer').trigger('reset')
+}
+
+const addHandlers = function () {
+  $('#add-beer').on('submit', onAddBeer)
+}
+
 module.exports = {
   addBeerListHandlers,
-  onGetBeers
+  onGetBeers,
+  addHandlers
 }

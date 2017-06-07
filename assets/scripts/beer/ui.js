@@ -32,11 +32,21 @@ const saveBeerFailure = error => {
   console.error('error is ', error)
 }
 
+const addBeerSuccess = data => {
+  console.log('Your beer has been updated and is now ', data)
+}
+
+const addBeerFailure = error => {
+  console.error('error is ', error)
+}
+
 module.exports = {
   getBeersSuccess,
   getBeersFailure,
   deleteBeerSuccess,
   deleteBeerFailure,
   saveBeerSuccess,
-  saveBeerFailure
+  saveBeerFailure,
+  addBeerSuccess,
+  addBeerFailure
 }

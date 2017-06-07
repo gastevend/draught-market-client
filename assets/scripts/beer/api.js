@@ -34,8 +34,20 @@ const editBeer = (data, id) => {
   })
 }
 
+const addBeer = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/beers',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   getBeers,
   deleteBeer,
-  editBeer
+  editBeer,
+  addBeer
 }
