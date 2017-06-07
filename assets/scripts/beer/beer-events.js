@@ -66,6 +66,7 @@ const onAddBeer = function () {
     .then(onGetBeers)
     .catch(ui.addBeerFailure)
   $('#add-beer').trigger('reset')
+  $('#beer-name').focus()
 }
 
 const addHandlers = function () {

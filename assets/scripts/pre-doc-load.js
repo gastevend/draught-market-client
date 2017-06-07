@@ -8,6 +8,11 @@ const preDocLoadActions = function () {
   $('#drpdwn-button').hide()
   $('#manage-market-page').hide()
   $('#end').hide()
+  $('#susuccess').hide()
+  $('#suerror').hide()
+  $('#sierror').hide()
+  $('#cpsuccess').hide()
+  $('#cperror').hide()
 }
 
 module.exports = {

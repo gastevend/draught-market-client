@@ -7,14 +7,14 @@ const signUpSuccess = (data) => {
   console.log('sign up working', data)
   $('#sign-up').hide()
   $('#sign-in').show()
-  // $('#susuccess').show()
-  // $('#suerror').hide()
+  $('#susuccess').show()
+  $('#suerror').hide()
   // $('#sierror').hide()
 }
 
 const signUpFailure = (error) => {
   console.error('signUpFailure ran. error is ', error)
-  // $('#suerror').show()
+  $('#suerror').show()
 }
 
 const signInSuccess = data => {
@@ -25,7 +25,7 @@ const signInSuccess = data => {
   $('#sign-out').show()
   $('#sign-in').hide()
   $('#manage-market-page').show()
-  // $('#susuccess').hide()
+  $('#susuccess').hide()
   // $('#suerror').hide()
   // $('.sound-board').hide()
   // $('#sulink').hide()

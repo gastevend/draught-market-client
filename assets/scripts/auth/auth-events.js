@@ -44,6 +44,7 @@ const onOrSignIn = function () {
   $('#sign-up').hide()
   $('#sign-in').show()
   $('#sign-up').trigger('reset')
+  $('#suerror').hide()
 }
 
 const onOrSignUp = function () {
