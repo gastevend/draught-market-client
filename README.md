@@ -10,10 +10,12 @@ Install with `npm install`.
 -   [Handlebars.js](http://handlebarsjs.com)
 
 ## Screenshots
+
+
 ## Links
 [API Repo](https://github.com/gastevend/draught-market-api)
 
-[Web App](https://gastevend.github.io/draught-market-client)
+[Deployed Web App](https://gastevend.github.io/draught-market-client)
 ## Technologies
 
 
