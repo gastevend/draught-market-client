@@ -18,3 +18,12 @@ $(() => {
 // const example = require('./example')
 
 // use require without a reference to ensure a file is bundled
+
+$.fn.extend({
+  animateCss: function (animationName) {
+    const animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
+    this.addClass('animated ' + animationName).one(animationEnd, function () {
+      $(this).removeClass('animated ' + animationName)
+    })
+  }
+})
