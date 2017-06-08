@@ -44,10 +44,10 @@
     <strong>Booya! Sign up successful.</strong> Go ahead and sign in to start choosing songs.
   </div>
   <div class="alert alert-danger" id='suerror' role="alert">
-    <strong>Oh snap!</strong> Try again, make sure your passwords are matching.
+    <strong>Oh snap!</strong> Try again, make sure your passwords are matching. If you think you might already have an account click on Sign in.
   </div>
   <div class="alert alert-danger" id='sierror' role="alert">
-    <strong>Hmmmm</strong> Try again, email and password do not match.
+    <strong>Hmmmm</strong> Try again, your email or password was incorrect. If you dont already have an account click on Sign up
   </div>
   <div class="alert alert-success alert-dismissible" id='cpsuccess' role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -60,32 +60,33 @@
   <!-- End alert messages -->
 
   <form id="sign-up" class='col-xs-8 col-xs-offset-2 forms'>
-    <fieldset>
+    <fieldset class='form-group'>
       <legend>Sign up!</legend>
-      <input type='text' name='credentials[email]' id='sign-up-email' placeholder='Email'>
-      <input type='password' name='credentials[password]' id='sign-up-password' placeholder='Password'>
-      <input type='password' name='credentials[password_confirmation]' id='sign-up-password-confirmation' placeholder='Confirm Password'>
+      <input type='text' name='credentials[email]' id='sign-up-email' placeholder='Email' class='form-control'>
+      <input type='password' name='credentials[password]' id='sign-up-password' placeholder='Password' class='form-control'>
+      <input type='password' name='credentials[password_confirmation]' id='sign-up-password-confirmation' placeholder='Confirm Password' class='form-control'>
       <input type="submit" name="submit" value="Sign up!" class='btn btn-primary'><br/>
       <span>or</span><a id='sign-in-link'> Sign in</a>
     </fieldset>
   </form>
 
   <form id="sign-in" class='col-xs-8 col-xs-offset-2 forms'>
-    <fieldset>
+    <fieldset class='form-group'>
       <legend>Sign in!</legend>
-      <input type='text' name='credentials[email]' id='sign-in-email' placeholder='Email'>
-      <input type='password' name='credentials[password]' id='sign-in-password' placeholder='Password'>
+      <input type='text' name='credentials[email]' id='sign-in-email' placeholder='Email' class='form-control'>
+      <input type='password' name='credentials[password]' id='sign-in-password' placeholder='Password' class='form-control'>
       <input type="submit" name="submit" value="Sign in!" class='btn btn-primary'><br/>
       <span>or</span><a id='sign-up-link'> Sign up</a>
     </fieldset>
   </form>
 
   <form id="change-password" class='col-xs-8 col-xs-offset-2 forms'>
-    <fieldset>
+    <fieldset class='form-group'>
       <legend>Change Password!</legend>
-      <input type="password" name='passwords[old]' id='old-password' placeholder="Old Password">
-      <input type="password" name='passwords[new]' id='new-password' placeholder="New Password">
-      <input type="submit" name="submit" value="Change Password!">
+      <input type="password" name='passwords[old]' id='old-password' placeholder="Old Password" class='form-control'>
+      <input type="password" name='passwords[new]' id='new-password' placeholder="New Password" class='form-control'>
+      <input type="submit" name="submit" value="Change Password!" class='btn btn-info'><br /><br />
+      <a id='back-to-manage'>Back to the Manage My Beer List page</a>
     </fieldset>
   </form>
 
@@ -102,10 +103,10 @@
       <div class='col-xs-10 col-xs-offset-1'>
         <h2 id='tap-header'>What's on Tap?</h2>
         <form id='add-beer'>
-          <fieldset>
-            <input type="text" name='beer[name]' id='beer-name' placeholder="Beer name">
-            <input type="text" name='beer[price]' id='price' placeholder="Price"><br />
-            <input type="submit" name="submit" value="Add Beer" class='btn btn-success'>
+          <fieldset class='form-group'>
+            <input type="text" name='beer[name]' id='beer-name' placeholder="Beer name" class='form-control'>
+            <input type="text" name='beer[price]' id='price' placeholder="Price" class='form-control'>
+            <input type="submit" name="submit" value="Add Beer" class='btn btn-info'>
           </fieldset>
         </form>
       </div>
@@ -117,8 +118,8 @@
       </div>
     </div>
     <div class='row mrkt-action-buttons'>
-      <div class='col-xs-3 col-xs-offset-4 gutterless' id='start'>
-        <p>Open the Market</p>
+      <div id='start'>
+        <p>Open the <br />Market</p>
       </div>
     </div>
   </div>
@@ -129,13 +130,17 @@
   <div class='container-fluid' id='draught-market-page'>
     <div class='row'>
       <h1>Draught Market</h1>
+      <p id='market-info'>
+        When a customer buys a beer just click it's purchase button and wait for
+        the screen to update to watch the prices rise and fall with demand.
+      </p>
       <div class='container-fluid beers-container' id='market-container'>
 
       </div>
     </div>
     <div class='row mrkt-action-buttons'>
-      <div class='col-xs-3 col-xs-offset-4 gutterless' id='end'>
-        <p>Close the Market</p>
+      <div id='end'>
+        <p>Close the <br />Market</p>
       </div>
     </div>
   </div>

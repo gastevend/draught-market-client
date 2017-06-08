@@ -36,7 +36,7 @@ const saveBeerFailure = error => {
 }
 
 const addBeerSuccess = data => {
-  console.log('Your beer has been updated and is now ', data)
+  console.log('Your beer has been added ', data)
 }
 
 const addBeerFailure = error => {

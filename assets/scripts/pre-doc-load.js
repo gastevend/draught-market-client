@@ -1,7 +1,7 @@
 'use strict'
 
 const preDocLoadActions = function () {
-  $('#sign-in').hide()
+  $('#sign-up').hide()
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#change-password-link').hide()

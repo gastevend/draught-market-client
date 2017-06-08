@@ -24,6 +24,7 @@ const onEditBeer = function () {
   $('.beer-price[data-id=' + id + ']').html('0.00')
   $('.beer-name[data-id=' + id + ']').focus()
   $('.manage-pg-buttons[data-id=' + id + ']').toggle()
+  $('.edit-button').off('click', onEditBeer)
 }
 
 const onSaveBeer = function () {
@@ -36,7 +37,13 @@ const onSaveBeer = function () {
     beer: {}
   }
   data.beer.name = $('.beer-name[data-id=' + id + ']').html()
-  data.beer.price = $('.beer-price[data-id=' + id + ']').html()
+  const priceString = $('.beer-price[data-id=' + id + ']').html()
+  data.beer.price = parseInt(priceString)
+  if (data.beer.price < 0) {
+    data.beer.price = 0.01
+  } else if (data.beer.price > 100) {
+    data.beer.price = 100.00
+  }
 
   if (!data.beer.name) {
     console.log('inside if name is empty')
@@ -75,16 +82,25 @@ const onGetBeers = function () {
 }
 
 const onAddBeer = function () {
-  const data = getFormFields(this)
   event.preventDefault()
+  const data = getFormFields(this)
   console.log(data)
 
+  data.beer.price = parseFloat(data.beer.price)
+  console.log('when adding the price is', data.beer.price)
+  if (data.beer.price < 0) {
+    data.beer.price = 0.01
+  } else if (data.beer.price > 100) {
+    data.beer.price = 100.00
+  }
+
+  $('#cpsuccess').hide()
   $('#beer-name').css('border', 'none')
   $('#price').css('border', 'none')
 
   if (!data.beer.name) {
     $('#beer-name').css('border', '2px solid red')
-  } else if (!data.beer.price || (data.beer.price === '0.00')) {
+  } else if (!data.beer.price) {
     $('#price').css('border', '2px solid red')
   } else {
     api.addBeer(data)
@@ -97,14 +113,18 @@ const onAddBeer = function () {
 }
 
 const onOpenMarket = function () {
+  $('#cpsuccess').hide()
   $('#manage-market-page').hide()
   $('#draught-market-page').show()
+  $('#change-password-link').hide()
+  onGetBeers()
   priceLogic.market.runGameLogic()
 }
 
 const onCloseMarket = function () {
   $('#manage-market-page').show()
   $('#draught-market-page').hide()
+  $('#change-password-link').show()
   priceLogic.market.stopGameLogic()
 }
 

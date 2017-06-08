@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-// const showSearchJumboTemplate = require('../templates/search-jumbo.handlebars')
+const priceLogic = require('../beer/price-logic.js')
 
 const signUpSuccess = (data) => {
   console.log('sign up working', data)
@@ -9,12 +9,13 @@ const signUpSuccess = (data) => {
   $('#sign-in').show()
   $('#susuccess').show()
   $('#suerror').hide()
-  // $('#sierror').hide()
+  $('#sierror').hide()
 }
 
 const signUpFailure = (error) => {
   console.error('signUpFailure ran. error is ', error)
   $('#suerror').show()
+  $('#susuccess').hide()
 }
 
 const signInSuccess = data => {
@@ -27,10 +28,7 @@ const signInSuccess = data => {
   $('#manage-market-page').show()
   $('#susuccess').hide()
   // $('#suerror').hide()
-  // $('.sound-board').hide()
-  // $('#sulink').hide()
-  // $('.footer').show()
-  // $('#sierror').hide()
+  $('#sierror').hide()
   // $('#cpdropdown').show()
   // $('.sign-up-container').hide()
   // $('#leave').show()
@@ -41,22 +39,25 @@ const signInSuccess = data => {
 
 const signInFailure = error => {
   console.error('signInFailure ran. error is ', error)
-  // $('#sierror').show()
-  // $('#suerror').hide()
+  $('#sierror').show()
+  $('#susuccess').hide()
 }
 
 const signOutSuccess = data => {
   store.user = null
   console.log('sign out working', data)
+  priceLogic.market.stopGameLogic()
   $('#sign-out').hide()
-  $('#sign-up').show()
+  $('#sign-in').show()
   $('#change-password-link').hide()
   $('#drpdwn-button').hide()
   $('#manage-market-page').hide()
   $('#draught-market-page').hide()
-  // $('.sound-board').show()
   // $('#cpdropdown').hide()
-  // $('#sulink').show()
+  $('#cperror').hide()
+  $('#change-password').hide()
+  $('#cpsuccess').hide()
+  $('#add-beer').trigger('reset')
   // $('.view').empty()
   // $('#leave').hide()
   // $('.jumbotron').empty()

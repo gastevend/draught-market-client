@@ -23,12 +23,12 @@ const market = {
     market.beerList = []
   },
   purchaseBeer: function (index) {
-    market.beerList[index].price += 0.75
+    market.beerList[index].price += 1.00
     const otherBeers = market.beerList.filter(beer => {
       return beer.name !== market.beerList[index].name
     })
     otherBeers.map(beers => {
-      beers.price -= 0.15
+      beers.price = Math.ceil((beers.price - (1 / market.beerList.length)) * 100) / 100
     })
     console.log('purchaseBeer ran')
   }

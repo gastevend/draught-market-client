@@ -51,6 +51,7 @@ const onOrSignUp = function () {
   $('#sign-up').show()
   $('#sign-in').hide()
   $('#sign-in').trigger('reset')
+  $('#sierror').hide()
 }
 
 const onChangePasswordLink = function () {
@@ -63,6 +64,13 @@ const closeDropdown = function () {
   $('#bs-example-navbar-collapse-1').collapse('toggle')
 }
 
+const onBackToManage = function () {
+  $('#change-password').trigger('reset')
+  $('#change-password').hide()
+  $('#manage-market-page').show()
+  $('#cperror').hide()
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -72,6 +80,7 @@ const addHandlers = () => {
   $('#sign-up-link').on('click', onOrSignUp)
   $('#change-password-link').on('click', onChangePasswordLink)
   $('.drop-links').on('click', closeDropdown)
+  $('#back-to-manage').on('click', onBackToManage)
 }
 
 module.exports = {
