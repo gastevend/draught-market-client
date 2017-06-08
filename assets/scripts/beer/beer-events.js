@@ -85,9 +85,9 @@ const onAddBeer = function () {
   event.preventDefault()
   const data = getFormFields(this)
   console.log(data)
-
-  data.beer.price = parseFloat(data.beer.price)
-  console.log('when adding the price is', data.beer.price)
+  console.log('Before parse float price is', data.beer.price)
+  // data.beer.price = parseFloat(data.beer.price)
+  console.log('After parse float price is', data.beer.price)
   if (data.beer.price < 0) {
     data.beer.price = 0.01
   } else if (data.beer.price > 100) {

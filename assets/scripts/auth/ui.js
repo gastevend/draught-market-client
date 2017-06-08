@@ -22,7 +22,9 @@ const signInSuccess = data => {
   store.user = data.user
   console.log('sign in working', data)
   $('#change-password-link').show()
-  $('#drpdwn-button').show()
+  if ($(window).width() < 845) {
+    $('#drpdwn-button').show()
+  }
   $('#sign-out').show()
   $('#sign-in').hide()
   $('#manage-market-page').show()

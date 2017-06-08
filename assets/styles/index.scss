@@ -1,6 +1,16 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+
+body {
+  max-width: 1250px;
+}
+
+#manage-market-page,
+#draught-market-page {
+  max-width: 1000px;
+}
+
 fieldset,
 input,
 h1,
@@ -23,6 +33,7 @@ h1 {
   height: 200px;
   border: 1px solid black;
   overflow: scroll;
+  border-radius: 5px;
 }
 
 #tap-header {
@@ -32,6 +43,7 @@ h1 {
 .beer-headers {
   margin: 10px 0;
   border-bottom: 1px solid black;
+  border-radius: 15px;
 }
 
 .save-button,
@@ -43,8 +55,18 @@ h1 {
   margin-bottom: 10px;
 }
 
+#add-beer {
+  max-width: 350px;
+  margin: auto;
+}
+
 .btn-primary {
   margin: 10px 0;
+}
+
+.auth {
+  max-width: 400px;
+  margin: 50px auto;
 }
 
 .navbar {
@@ -53,7 +75,8 @@ h1 {
 
 .mrkt-action-buttons {
   text-align: center;
-  margin-top: 20px;
+  max-width: 400px;
+  margin: 20px auto;
   background-color: #57C45D;
   border-radius: 5px;
 }
@@ -74,3 +97,35 @@ h1 {
     height: 100px;
   }
 }
+
+@media screen and (min-width: 1000px) {
+  #whats-on-tap {
+    float: left;
+    margin-top: 150px;
+    width: 350px;
+  }
+  #beer-list {
+    max-width: 1000px;
+    margin-left: 400px;
+    margin-top: 30px;
+  }
+  #market-container {
+    margin-top: 30px;
+  }
+  .beers-container {
+    height: 350px;
+  }
+  .info-headers {
+    max-width: 500px;
+    margin: auto;
+  }
+  .mrkt-action-buttons {
+    margin-top: 60px;
+  }
+}
+
+// @media screen and (min-width: 845px) {
+//   #drpdwn-button {
+//     display: none;
+//   }
+// }

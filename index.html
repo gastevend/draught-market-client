@@ -60,7 +60,7 @@
   <!-- End alert messages -->
 
   <form id="sign-up" class='col-xs-8 col-xs-offset-2 forms'>
-    <fieldset class='form-group'>
+    <fieldset class='form-group auth'>
       <legend>Sign up!</legend>
       <input type='text' name='credentials[email]' id='sign-up-email' placeholder='Email' class='form-control'>
       <input type='password' name='credentials[password]' id='sign-up-password' placeholder='Password' class='form-control'>
@@ -71,7 +71,7 @@
   </form>
 
   <form id="sign-in" class='col-xs-8 col-xs-offset-2 forms'>
-    <fieldset class='form-group'>
+    <fieldset class='form-group auth'>
       <legend>Sign in!</legend>
       <input type='text' name='credentials[email]' id='sign-in-email' placeholder='Email' class='form-control'>
       <input type='password' name='credentials[password]' id='sign-in-password' placeholder='Password' class='form-control'>
@@ -81,7 +81,7 @@
   </form>
 
   <form id="change-password" class='col-xs-8 col-xs-offset-2 forms'>
-    <fieldset class='form-group'>
+    <fieldset class='form-group auth'>
       <legend>Change Password!</legend>
       <input type="password" name='passwords[old]' id='old-password' placeholder="Old Password" class='form-control'>
       <input type="password" name='passwords[new]' id='new-password' placeholder="New Password" class='form-control'>
@@ -96,7 +96,7 @@
     <div class='row' id='welcome-container'>
       <div class='col-xs-10 col-xs-offset-1 gutterless' id='welcome-message'>
         <h2>Welcome</h2>
-        <p>Get started by adding beers that you have on tap to the beer list and hit the start button to open the market.</p>
+        <p class='info-headers'>Get started by adding beers that you have on tap to the beer list and hit the start button to open the market.</p>
       </div>
     </div>
     <div class='row' id='whats-on-tap'>
@@ -130,7 +130,7 @@
   <div class='container-fluid' id='draught-market-page'>
     <div class='row'>
       <h1>Draught Market</h1>
-      <p id='market-info'>
+      <p id='market-info' class='info-headers'>
         When a customer buys a beer just click it's purchase button and wait for
         the screen to update to watch the prices rise and fall with demand.
       </p>

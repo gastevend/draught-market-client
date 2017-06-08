@@ -8,7 +8,6 @@ const market = {
       beer.price = parseFloat(beer.price)
       market.beerList.push(beer)
     })
-    console.log('after the update market map function beerList is ', market.beerList)
   },
   runGameLogic: function () {
     market.beerList.map((beer, index) => {
