@@ -1,5 +1,14 @@
 'use strict'
 
+$.fn.extend({
+  animateCss: function (animationName) {
+    const animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
+    this.addClass('animated ' + animationName).one(animationEnd, function () {
+      $(this).removeClass('animated ' + animationName)
+    })
+  }
+})
+
 const market = {
   beerList: [],
   updateMarketData: function (data) {
@@ -15,6 +24,7 @@ const market = {
       console.log(`${beer.name}: ${beer.price}`)
       $('.market-beer-price[data-id=' + index + ']').html(priceToString)
     })
+    $('.market-beer-price').animateCss('flash')
     market.updateBoard = setTimeout(market.runGameLogic, 5000)
   },
   stopGameLogic: function () {
