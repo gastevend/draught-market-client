@@ -38,7 +38,7 @@ const onSaveBeer = function () {
   }
   data.beer.name = $('.beer-name[data-id=' + id + ']').html()
   const priceString = $('.beer-price[data-id=' + id + ']').html()
-  data.beer.price = parseInt(priceString)
+  data.beer.price = parseFloat(priceString)
   if (data.beer.price < 0) {
     data.beer.price = 0.01
   } else if (data.beer.price > 100) {
@@ -85,9 +85,11 @@ const onAddBeer = function () {
   event.preventDefault()
   const data = getFormFields(this)
   console.log(data)
-  console.log('Before parse float price is', data.beer.price)
+
   // data.beer.price = parseFloat(data.beer.price)
-  console.log('After parse float price is', data.beer.price)
+  data.beer.price = data.beer.price.replace(/[$a-zA-Z]/g, '')
+  data.beer.name = data.beer.name.replace(/(<([^>$]+)>)/gi, '')
+
   if (data.beer.price < 0) {
     data.beer.price = 0.01
   } else if (data.beer.price > 100) {
@@ -113,12 +115,17 @@ const onAddBeer = function () {
 }
 
 const onOpenMarket = function () {
-  $('#cpsuccess').hide()
-  $('#manage-market-page').hide()
-  $('#draught-market-page').show()
-  $('#change-password-link').hide()
-  onGetBeers()
-  priceLogic.market.runGameLogic()
+  if (priceLogic.market.beerList.length > 0) {
+    $('#cpsuccess').hide()
+    $('#manage-market-page').hide()
+    $('#add-beer').trigger('reset')
+    $('#draught-market-page').show()
+    $('#change-password-link').hide()
+    onGetBeers()
+    priceLogic.market.runGameLogic()
+  } else {
+    $('#beer-list').animateCss('tada')
+  }
 }
 
 const onCloseMarket = function () {

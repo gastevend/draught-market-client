@@ -4,10 +4,12 @@ const market = {
   beerList: [],
   updateMarketData: function (data) {
     market.beerList = []
-    data.beers.map(beer => {
-      beer.price = parseFloat(beer.price)
-      market.beerList.push(beer)
-    })
+    if (data.beers) {
+      data.beers.map(beer => {
+        beer.price = parseFloat(beer.price)
+        market.beerList.push(beer)
+      })
+    }
   },
   runGameLogic: function () {
     market.beerList.map((beer, index) => {
@@ -20,7 +22,7 @@ const market = {
   },
   stopGameLogic: function () {
     clearTimeout(market.updateBoard)
-    market.beerList = []
+    // market.beerList = []
   },
   purchaseBeer: function (index) {
     market.beerList[index].price += 1.00
