@@ -37,7 +37,7 @@ const onSaveBeer = function () {
   const data = {
     beer: {}
   }
-  data.beer.name = $('.beer-name[data-id=' + id + ']').html()
+  data.beer.name = $('.beer-name[data-id=' + id + ']').text()
   const priceString = $('.beer-price[data-id=' + id + ']').html()
   data.beer.price = parseFloat(priceString)
   if (data.beer.price < 0) {
@@ -63,6 +63,7 @@ const onSaveBeer = function () {
 
 const onPurchaseBeer = function () {
   const index = $(event.target).attr('data-id')
+  $('.market-beer-name[data-id=' + index + ']').animateCss('bounceIn')
   priceLogic.market.purchaseBeer(index)
 }
 

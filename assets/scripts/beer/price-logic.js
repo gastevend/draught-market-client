@@ -18,7 +18,7 @@ const market = {
       $('.market-beer-price[data-id=' + index + ']').html(priceToString)
     })
     $('.market-beer-price').animateCss('flash')
-    market.updateBoard = setTimeout(market.runGameLogic, 5000)
+    market.updateBoard = setTimeout(market.runGameLogic, 15000)
   },
   stopGameLogic: function () {
     clearTimeout(market.updateBoard)
