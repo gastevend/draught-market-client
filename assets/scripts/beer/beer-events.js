@@ -20,6 +20,7 @@ const onCancelBeer = function () {
 const onEditBeer = function () {
   const id = $(event.target).attr('data-id')
 
+  $('.one-beer[data-id=' + id + ']').addClass('well well-sm')
   $('.beer-editable[data-id=' + id + ']').attr('contenteditable', 'true')
   $('.beer-price[data-id=' + id + ']').html('0.00')
   $('.beer-name[data-id=' + id + ']').focus()

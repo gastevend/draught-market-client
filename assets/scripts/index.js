@@ -8,17 +8,6 @@ const beerEvents = require('./beer/beer-events.js')
 
 preDocLoad.preDocLoadActions()
 
-$(() => {
-  setAPIOrigin(location, config)
-  authEvents.addHandlers()
-  beerEvents.addHandlers()
-})
-
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-
 $.fn.extend({
   animateCss: function (animationName) {
     const animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend'
@@ -27,3 +16,15 @@ $.fn.extend({
     })
   }
 })
+
+$(() => {
+  setAPIOrigin(location, config)
+  authEvents.addHandlers()
+  beerEvents.addHandlers()
+  $('body').animateCss('zoomIn')
+})
+
+// use require with a reference to bundle the file and use it in this file
+// const example = require('./example')
+
+// use require without a reference to ensure a file is bundled
